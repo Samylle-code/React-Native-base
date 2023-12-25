@@ -1,68 +1,42 @@
-import {VStack, Image, Text, Box, FormControl, Input, Button, Link}  from 'native-base'
-import {TouchableOpacity} from 'react-native'
+import { VStack, Image, Text, Box, Link } from 'native-base'
+import { TouchableOpacity } from 'react-native';
 import Logo from './assets/Logo.png'
+import { Botao } from './componentes/Botao';
+import { EntradaTexto } from './componentes/EntradaTexto';
 import { Titulo } from './componentes/Titulo';
 
 export default function Login() {
   return (
     <VStack flex={1} alignItems="center" justifyContent="center" p={5}>
-        <Image source={Logo} alt="Logo Voll" />
+      <Image source={Logo} alt="Logo Voll" />
 
-        <Titulo>
-          Faça login em sua conta
-        </Titulo>
+      <Titulo>
+        Faça login em sua conta
+      </Titulo>
+      <Box>
+        <EntradaTexto
+          label="Email"
+          placeholder="Insira seu endereço de e-mail"
+        />
+        <EntradaTexto
+          label="Senha"
+          placeholder="Insira sua senha"
+        />
+      </Box>
+      <Botao>Entrar</Botao>
 
-        <Box>
-            <FormControl mt={3}>
-              <FormControl.Label> Email</FormControl.Label>
-              <Input 
-                placeholder='Insira seu endereço de email'
-                size="lg"
-                w="100%"
-                borderRadius='lg'
-                bgColor='gray.100'
-                shadow={3}
+      <Link href='https://www.alura.com.br' mt={2}>
+        Esqueceu sua senha?
+      </Link>
 
-                />
-            </FormControl>
-
-            <FormControl mt={3}>
-              <FormControl.Label> Senha</FormControl.Label>
-              <Input 
-                placeholder='Insira sua senha'
-                size="lg"
-                w="100%"
-                borderRadius='lg'
-                bgColor='gray.100'
-                shadow={3}
-
-                />
-            </FormControl>
-        </Box>
-
-        <Button 
-          w="100%"
-          bg="blue.800"
-          mt={10}
-          borderRadius="lg">
-          Entrar
-        </Button>
-
-        <Link mt={2} href='https://www.google.com'>
-            Esqueceu sua senha?
-          </Link>
-
-        <Box w="100%" flexDirection="row" justifyContent= "center" mt={8}>
-          <Text color="gray.600">
-            Ainda não tem cadastro?
+      <Box w="100%" flexDirection="row" justifyContent="center" mt={8}>
+        <Text>Ainda não tem cadastro? </Text>
+        <TouchableOpacity>
+          <Text color="blue.500">
+            Faça seu cadastro!
           </Text>
-          <TouchableOpacity>
-            <Text color="blue.500">
-              Faça seu cadastro!
-            </Text>
-          </TouchableOpacity>
-        </Box>
-        
+        </TouchableOpacity>
+      </Box>
     </VStack>
   );
 }
