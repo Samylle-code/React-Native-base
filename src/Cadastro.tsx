@@ -8,7 +8,7 @@ import { Titulo } from './componentes/Titulo';
 import { secoes } from './utils/CadastroEntradaTexto';
 
 
-export default function Login() {
+export default function Cadastro() {
 
   const [numSecao,setNumSecao] = useState(0);
 
