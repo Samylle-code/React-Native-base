@@ -8,6 +8,7 @@ interface CardProps {
   data?: string;
   foiAtendido?: boolean;
   foiAgendado?: boolean;
+  novaConsulta?: boolean;
 }
 
 export function CardConsulta({
@@ -16,7 +17,8 @@ export function CardConsulta({
   data,
   especialidade,
   foiAgendado,
-  foiAtendido
+  foiAtendido,
+  novaConsulta
 }: CardProps){
   return(
     <VStack w="100%" bg={foiAtendido ? 'blue.100': 'white'} p="5" borderRadius="lg" shadow="2" mb={5}>
@@ -29,8 +31,9 @@ export function CardConsulta({
         </VStack>
       </VStack>
       <Botao mt={4}>
-        {foiAgendado ? 'Cancelar consulta' : 'Agendar consulta'}
+        {foiAgendado ? 'Cancelar consulta' : novaConsulta? 'Agendar consulta': 'Cancelar consulta'}
       </Botao>
     </VStack>
+    
   )
 }
